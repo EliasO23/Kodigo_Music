@@ -3,7 +3,21 @@ import { Link } from 'react-router-dom';
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 import { FaPlay } from "react-icons/fa";
 
-const ContainerSong = ({ song, isFavorite, toggleFavorite }) => {
+interface Song {
+    id: number;
+    title: string;
+    artist: string;
+    image: string;
+    duration: string;
+  }
+  
+  interface ContainerSongProps {
+    song: Song;
+    isFavorite: boolean;
+    toggleFavorite: () => void;
+  }
+
+const ContainerSong = ({ song, isFavorite, toggleFavorite }: ContainerSongProps) => {
     return (
         <>
             <tbody>

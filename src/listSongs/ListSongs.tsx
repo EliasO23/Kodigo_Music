@@ -52,10 +52,10 @@ const ListSongs = () => {
   }, [isFavorite]);
 
   // Función para cambiar el estado de favorito
-  const toggleFavorite = (songId) => {
-    setIsFavorite((prevFavorites) => ({
+  const toggleFavorite = (songId: number) => {
+    setIsFavorite((prevFavorites: { [key: number]: boolean }) => ({
       ...prevFavorites,
-      [songId]: prevFavorites[songId],
+      [songId]: !prevFavorites[songId],
     })); 
   };
 

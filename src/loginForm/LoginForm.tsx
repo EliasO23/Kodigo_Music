@@ -1,16 +1,24 @@
 import { useForm } from 'react-hook-form';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './LoginForm.module.css'
 import logo from '../assets/img/Kodigo_Music.png'
 
+interface FormData {
+    username: string;
+    password: string;
+    email: string;
+  }
+
 const LoginForm = () => {
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
     const navigate = useNavigate();
 
     // Función que se ejecuta cuando el formulario es válido
-    const onSubmit = (data) => {
+    const onSubmit = (data: FormData) => {
         alert('Cuenta creada');
+        console.log(data);
+        
         // Redirigir a la página principal (HomePage) cuando todo es correcto
         navigate('/')
     };
