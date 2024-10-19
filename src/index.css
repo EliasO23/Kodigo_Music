@@ -8,7 +8,7 @@
 }
 
 body{
-  height: 100vh;
+  height: auto;
   background: linear-gradient(135deg, #45416c, #0f0d1a);
   background-size: cover;
   background-repeat: no-repeat;
