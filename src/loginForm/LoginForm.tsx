@@ -25,10 +25,11 @@ const LoginForm = () => {
 
     return (
         <>
-            <div className={styles.loginContainer}>
-                <div className={styles.welcome}>
+            <div className={styles.welcome}>
                     <h1>Bienvenidos</h1>
-                </div>
+            </div>
+            
+            <div className={styles.loginContainer}>
 
                 <section className={styles.headerLogo}>
                     <img src={logo} alt="Logo KodigoMusic" />
