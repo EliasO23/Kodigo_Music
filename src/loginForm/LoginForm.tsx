@@ -2,12 +2,8 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import styles from './LoginForm.module.css'
 import logo from '../assets/img/Kodigo_Music.png'
+import { FormData } from '../shared/interfaces/LoginForm.interfaces';
 
-interface FormData {
-    username: string;
-    password: string;
-    email: string;
-  }
 
 const LoginForm = () => {
 
@@ -45,11 +41,15 @@ const LoginForm = () => {
                         <input
                             type="text"
                             {...register('username', {
-                                required: 'Username is required',
-                                validate: (value) => !/\s/.test(value) || 'Username cannot contain spaces',
+                                required: true,
+                                validate: (value) => !/\s/.test(value),
                             })}
                         />
-                        {errors.username && <p className={styles.errorMessage}>{errors.username.message}</p>}
+                        {
+                            errors.username?.type === "required" &&<p className={styles.errorMessage}>Username is required</p> || 
+                            errors.username?.type === "validate" && <p className={styles.errorMessage}>Username cannot contain spaces</p>
+                        }
+                        
                     </div>
 
                     {/* Correo electrónico */}
@@ -58,14 +58,14 @@ const LoginForm = () => {
                         <input
                             type="email"
                             {...register('email', {
-                                required: 'Email is required',
-                                pattern: {
-                                    value: /^[a-zA-Z0-9._%+-]+@gmail\.com$/,
-                                    message: 'Email must be a valid @gmail.com address',
-                                },
+                                required: true,
+                                pattern: /^[a-zA-Z0-9._%+-]+@gmail\.com$/,
                             })}
                         />
-                        {errors.email && <p className={styles.errorMessage}>{errors.email.message}</p>}
+                        {
+                            errors.email?.type === "required" && <p className={styles.errorMessage}>Email is required</p> ||
+                            errors.email?.type === "pattern" && <p className={styles.errorMessage}>Email must be a valid @gmail.com address</p>
+                        }
                     </div>
 
                     {/* Contraseña */}
@@ -74,14 +74,17 @@ const LoginForm = () => {
                         <input
                             type="password"
                             {...register('password', {
-                                required: 'Password is required',
-                                minLength: {
-                                    value: 8,
-                                    message: 'Password must be at least 8 characters long',
-                                },
+                                required: true,
+                                minLength:8,
+                                pattern: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+
                             })}
                         />
-                        {errors.password && <p className={styles.errorMessage}>{errors.password.message}</p>}
+                        {
+                            errors.password?.type === "required" && <p className={styles.errorMessage}>Password is required</p> ||
+                            errors.password?.type === "minLength" && <p className={styles.errorMessage}>Password must be at least 8 characters long</p> ||
+                            errors.password?.type === "pattern" && <p className={styles.errorMessage}>Pastword must contain at least one letter (uppercase or lowercase), one number, and one special character (@$!%*?&). </p>
+                        }
                     </div>
 
                     <div className={styles.btn}>

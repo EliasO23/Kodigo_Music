@@ -1,17 +1,9 @@
 import { useState } from 'react';
 import styles from './ArtistCard.module.css';
 import { FaPlay } from 'react-icons/fa';
+import { Artist } from '../shared/interfaces/ArtistCard.interfaces';
 
-interface Artist {
-    name: string;
-    image: string;
-  }
-
-interface ArtistCardProps {
-    artist: Artist;
-  }
-
-const ArtistCard: React.FC<ArtistCardProps> = ({ artist }) => {
+const ArtistCard = ( {artist}: {artist: Artist} ) => {
     
     const [isHovered, setIsHovered] = useState(false);
 

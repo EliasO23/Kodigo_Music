@@ -2,20 +2,7 @@ import styles from './ContainerSong.module.css'
 import { Link } from 'react-router-dom';
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 import { FaPlay } from "react-icons/fa";
-
-interface Song {
-    id: number;
-    title: string;
-    artist: string;
-    image: string;
-    duration: string;
-  }
-  
-  interface ContainerSongProps {
-    song: Song;
-    isFavorite: boolean;
-    toggleFavorite: () => void;
-  }
+import { ContainerSongProps } from '../shared/interfaces/ContainerSong.interfaces';
 
 const ContainerSong = ({ song, isFavorite, toggleFavorite }: ContainerSongProps) => {
     return (
