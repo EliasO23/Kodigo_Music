@@ -26,9 +26,10 @@ const LoginForm = () => {
     return (
         <>
             <div className={styles.welcome}>
-                    <h1>Bienvenidos</h1>
+                <h1>Bienvenidos</h1>
+                <p>El sonido de tu vida, en cada momento y lugar.</p>
             </div>
-            
+
             <div className={styles.loginContainer}>
 
                 <section className={styles.headerLogo}>
@@ -84,7 +85,7 @@ const LoginForm = () => {
                     </div>
 
                     <div className={styles.btn}>
-                        <button type="submit">Create</button>
+                        <button type="submit">Register</button>
 
                     </div>
                 </form>

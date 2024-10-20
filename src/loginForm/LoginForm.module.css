@@ -17,16 +17,26 @@
 
 .welcome{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
     color: rgb(14, 230, 197);
     margin-top: 3rem;
+    width: 60%;
+    margin: 0 auto;
 }
 
 .welcome h1{
     font-size: 2rem;
     font-weight: 700;
+}
+
+.welcome p{
+    color: white;
+    text-align: center;
+    margin: 0.5rem 1rem;
+    
 }
 
 .headerLogo{
@@ -43,7 +53,7 @@
 }
 
 .formGroup {
-    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 }
 
 .formGroup label {
@@ -55,9 +65,10 @@
 
 .formGroup input {
     width: 100%;
-    padding: .3rem;
+    padding: .7rem;
     border: 3px solid #fcfcfd;
     border-radius: 5px;
+    font-size: 1rem;
 }
 
 .formGroup input:focus{
@@ -71,8 +82,6 @@
     justify-content: center;
 }
 
-
-
 .btn button {
     width: 60%;
     padding: 10px;
@@ -83,6 +92,7 @@
     cursor: pointer;
     font-size: 1rem;
     font-weight: 400;
+    margin-top: 2rem;
 }
 
 .btn button:hover {
