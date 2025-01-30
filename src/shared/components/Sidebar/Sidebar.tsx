@@ -20,9 +20,9 @@ const Sidebar = () => {
                     <img src={logo} alt="Logo_KodigoMusic" />
                     <h4>Music</h4>
                 </section>
-                <section className={styles.search}>
-                    <input type="text" placeholder="Search" />
-                </section>
+                {/* <section className={styles.search}>
+                    <input type="text" placeholder="Search"/>
+                </section> */}
             </div>
 
             <div className={styles.sidebar_menu}>
@@ -42,7 +42,9 @@ const Sidebar = () => {
             <div className={styles.sidebar_library}>
                 <h3>Library</h3>
                 <ul>
-                    <li><i><IoAlbumsOutline /></i> <span>Albums</span></li>
+                    <Link to={'/music'}>
+                        <li><i><IoAlbumsOutline /></i> <span>Albums</span></li>
+                    </Link>
                     <li><i><MdOutlineLibraryMusic /></i> <span>Songs</span></li>
                     <li><i><FaPhotoVideo /></i> <span>Music Videos</span></li>
                 </ul>

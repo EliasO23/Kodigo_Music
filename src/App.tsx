@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import ArtistPage from './Pages/ArtistPage/ArtistPage';
 import HomePage from './Pages/HomePage/HomePage';
 import LoginPage from './Pages/LoginPage/LoginPage';
+import MusicPage from './Pages/MusicPage/MusicPage';
 
 const App = () => {
 
@@ -18,6 +19,9 @@ const App = () => {
     {
       path: '/login',
       element: <LoginPage />
+    },{
+      path: '/music',
+      element: <MusicPage />
     }
   ])
 
